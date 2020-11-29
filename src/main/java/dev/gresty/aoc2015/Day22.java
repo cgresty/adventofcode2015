@@ -215,7 +215,7 @@ public class Day22 {
         }
 
         void boostArmor(int boost) {
-            armor = boost; // TODO cancel this when the effect expires
+            armor = boost;
         }
 
         void addMana(int extra) {
@@ -231,7 +231,7 @@ public class Day22 {
 
         void applyEffects(Boss b) {
             armor = 0;
-            var effects = new HashSet<Effect>(activeEffects);
+            var effects = new HashSet<>(activeEffects);
             for (var e : effects) {
                 if (e.apply(this, b)) {
                     activeEffects.remove(e);
